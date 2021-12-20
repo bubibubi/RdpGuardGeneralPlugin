@@ -120,7 +120,11 @@ namespace RdpGuardGeneralPlugin
 
             Configuration configuration = new Configuration()
             {
-                Protocol = NotConfiguredText
+                Name = "Plugin name",
+                Protocol = NotConfiguredText,
+                Directory = "Directory containing log files",
+                FileMask = "File mask (usually *.log)",
+                RegularExpression = "A ragular expression containing ?<username> and ?<ip> for example '(?<ip>.*) login failed for user (?<username>.*)"
             };
 
             using (var fileStream = new StreamWriter(GetConfigurationFileName()))
